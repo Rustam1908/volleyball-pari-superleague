@@ -8,5 +8,5 @@ import java.util.List;
 @Data
 public class StatsTable {
 
-    List<TeamRow> rows = new ArrayList<>();
+    private List<TeamRow> rows;
 }

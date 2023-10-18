@@ -19,5 +19,5 @@ public class TeamRow {
     private String sets;
     private String points;
     private String pointsPercent;
-    private List<String> performance;
+    private List<Performance> performances;
 }
