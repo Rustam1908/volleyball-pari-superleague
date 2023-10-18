@@ -5,6 +5,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.rusty.rest.InfoContainer;
 import org.rusty.rest.Performance;
 import org.rusty.rest.StatsTable;
 import org.rusty.rest.TeamRow;
@@ -21,14 +22,18 @@ public class CommonService {
     String mTableURL = "https://www.championat.com/volleyball/_msuperliga/tournament/5700/table/";
     String wTableURL = "https://www.championat.com/volleyball/_wsuperliga/tournament/5688/table/";
 
-    public List<StatsTable> getMTable() {
+    public InfoContainer getMTable() {
         Document mDocument = getDocument(mTableURL);
-        return parseTables(mDocument.select("tbody"));
+        InfoContainer infoContainer = new InfoContainer();
+        infoContainer.setTables(parseTables(mDocument.select("tbody")));
+        return infoContainer;
     }
 
-    public List<StatsTable> getWTable() {
+    public InfoContainer getWTable() {
         Document mDocument = getDocument(wTableURL);
-        return parseTables(mDocument.select("tbody"));
+        InfoContainer infoContainer = new InfoContainer();
+        infoContainer.setTables(parseTables(mDocument.select("tbody")));
+        return infoContainer;
     }
 
     private Document getDocument(String URL) {
