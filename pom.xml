@@ -75,7 +75,7 @@
           <archive>
             <manifest>
               <!-- Jar file entry point -->
-              <mainClass>com.rusty.ServerApplication</mainClass>
+              <mainClass>org.rusty.ServerApplication</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -85,7 +85,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
           <!--          <fork>true</fork>-->
-          <mainClass>com.rusty.ServerApplication</mainClass>
+          <mainClass>org.rusty.ServerApplication</mainClass>
         </configuration>
         <executions>
           <execution>
